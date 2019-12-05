@@ -15,7 +15,7 @@ namespace CustomListUnitTesting
             int actual;
 
             //act
-            list1.Add(4);
+            list1.Add(1);
             actual = list1.Count;
 
 
@@ -31,14 +31,8 @@ namespace CustomListUnitTesting
         {
             //arrange
             CustomList<int> listResize = new CustomList<int>();
-            int expected = 7;
+            int expected = 5;
             int actual;
-
-            int number1 = 2;
-            int number2 = 4;
-            int number3 = 6;
-            int number4 = 8;
-            int number5 = 10;
 
 
             //act
@@ -66,7 +60,7 @@ namespace CustomListUnitTesting
         {
             //arrange
             CustomList<int> listCheckIndex = new CustomList<int>();
-            int expected = 4;
+            int expected = 8;
             int actual;
 
 
@@ -76,7 +70,7 @@ namespace CustomListUnitTesting
             listCheckIndex.Add(4);
             listCheckIndex.Add(8);
 
-            actual = listCheckIndex.Count;
+            actual = listCheckIndex[3];
 
 
             //assert
@@ -84,10 +78,62 @@ namespace CustomListUnitTesting
 
 
         }
-    
-    
-    
-    
+
+        [TestMethod]
+        public void Add_TenNumbersToList_CheckIndexOfFive()
+        {
+            CustomList<int> listCheckIndexZero = new CustomList<int>();
+
+            //arrange
+            int expected = 5;
+            int actual;
+
+            //act
+
+            listCheckIndexZero.Add(1);
+            listCheckIndexZero.Add(2);
+            listCheckIndexZero.Add(3);
+            listCheckIndexZero.Add(4);
+            listCheckIndexZero.Add(5);
+            listCheckIndexZero.Add(6);
+            listCheckIndexZero.Add(7);
+            listCheckIndexZero.Add(8);
+            listCheckIndexZero.Add(9);
+            listCheckIndexZero.Add(10);
+
+            actual = listCheckIndexZero[4];
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Add_EightNumbers_ConfirmIndexZero()
+        {
+            //arrange
+            CustomList<int> listAddEight = new CustomList<int>();
+            int expected = 5;
+            int actual;
+
+
+            //act
+            listAddEight.Add(5);
+            listAddEight.Add(7);
+            listAddEight.Add(9);
+            listAddEight.Add(10);
+            listAddEight.Add(12);
+            listAddEight.Add(1);
+            listAddEight.Add(4);
+            listAddEight.Add(6);
+
+            actual = listAddEight[0];
+
+
+            //assert
+            Assert.AreEqual(expected, actual);
+
+
+
+        }
     
     }
 }
