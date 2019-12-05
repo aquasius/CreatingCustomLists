@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29411.108
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomListCreation", "CustomListCreation\CustomListCreation.csproj", "{212D61B6-146E-44F3-8F0B-E8BB7518C636}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomListUnitTesting", "CustomListUnitTesting\CustomListUnitTesting.csproj", "{1391431E-15A1-4976-8C23-013A8EF59DDC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{212D61B6-146E-44F3-8F0B-E8BB7518C636}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{212D61B6-146E-44F3-8F0B-E8BB7518C636}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{212D61B6-146E-44F3-8F0B-E8BB7518C636}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{212D61B6-146E-44F3-8F0B-E8BB7518C636}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1391431E-15A1-4976-8C23-013A8EF59DDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1391431E-15A1-4976-8C23-013A8EF59DDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1391431E-15A1-4976-8C23-013A8EF59DDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1391431E-15A1-4976-8C23-013A8EF59DDC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EB2529AA-0DB0-4824-BE93-B776BEC9EB9B}
+	EndGlobalSection
+EndGlobal
