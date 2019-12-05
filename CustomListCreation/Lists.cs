@@ -6,10 +6,24 @@ using System.Threading.Tasks;
 
 namespace CustomListCreation
 {
-    class Lists
+    public class CustomLists<T>
     {
+        //member variables
+        private T[] items;
+        private int capacity;
+        private int count;
 
 
+        //constructor
+        public CustomLists()
+        {
+            capacity = 4;
+            count = 0;
+            items = new T[capacity];
+        }
+
+
+        //member methods
 
 
 
