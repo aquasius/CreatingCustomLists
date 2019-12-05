@@ -26,10 +26,20 @@ namespace CustomListCreation
         //member methods
         public void Add(T item)
         {
+            
             if(count == capacity)
             {
                 capacity *= 2;
+                T[] temp = new T[capacity];
+                //move values to it
+                //destroy and recreate original 
+                //move values back to original
             }
+            else
+            {
+                items[count] = item;
+            }
+            count++;
         }
 
 

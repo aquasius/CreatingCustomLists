@@ -59,7 +59,7 @@ namespace CustomListUnitTesting
         public void Check_WhatsAtIndexThree()
         {
             //arrange
-            CustomList<int> listCheckIndex = new CustomList<int>();
+            CustomLists<int> listCheckIndex = new CustomLists<int>();
             int expected = 8;
             int actual;
 
@@ -82,7 +82,7 @@ namespace CustomListUnitTesting
         [TestMethod]
         public void Add_TenNumbersToList_CheckIndexOfFive()
         {
-            CustomList<int> listCheckIndexZero = new CustomList<int>();
+            CustomLists<int> listCheckIndexZero = new CustomLists<int>();
 
             //arrange
             int expected = 5;
@@ -110,7 +110,7 @@ namespace CustomListUnitTesting
         public void Add_EightNumbers_ConfirmIndexZero()
         {
             //arrange
-            CustomList<int> listAddEight = new CustomList<int>();
+            CustomLists<int> listAddEight = new CustomLists<int>();
             int expected = 5;
             int actual;
 
