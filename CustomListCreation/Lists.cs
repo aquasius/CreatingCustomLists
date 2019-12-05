@@ -24,7 +24,13 @@ namespace CustomListCreation
 
 
         //member methods
-
+        public void Add(T item)
+        {
+            if(count == capacity)
+            {
+                capacity *= 2;
+            }
+        }
 
 
     }

@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-
+using CustomListCreation;
 namespace CustomListUnitTesting
 {
     [TestClass]
@@ -10,7 +10,7 @@ namespace CustomListUnitTesting
         public void Add_OneNumber_ToCount()
         {
             //arrange
-            CustomList<int> list1 = new CustomList<int>();
+            CustomLists<int> list1 = new CustomLists<int>();
             int expected = 1;
             int actual;
 
@@ -30,7 +30,7 @@ namespace CustomListUnitTesting
         public void Add_FiveNumbers_ToResizeCapacity()
         {
             //arrange
-            CustomList<int> listResize = new CustomList<int>();
+            CustomLists<int> listResize = new CustomLists<int>();
             int expected = 5;
             int actual;
 
