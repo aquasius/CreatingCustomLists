@@ -246,6 +246,61 @@ namespace CustomListUnitTesting
             Assert.AreEqual(expected, actual);
         }
 
+        [TestMethod]
+        public void Add_TwoStrings()
+        {
+            //Arrange
+            CustomLists<string> listAddTwoStrings = new CustomLists<string>();
+            string expected = "Milwaukee,Bucks";
+            string actual;
+
+            //Act
+            listAddTwoStrings.Add("Milwaukee");
+            listAddTwoStrings.Add("Bucks");
+            actual = listAddTwoStrings.ToString();
+
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void AddTwoStrings_RemoveString()
+        {
+            //Arrange
+            CustomLists<string> listAddRemoveString = new CustomLists<string>();
+            string expected = "Coding";
+            string actual;
+
+            //Act
+            listAddRemoveString.Add("Computer");
+            listAddRemoveString.Add("Coding");
+            listAddRemoveString.Remove("Computer");
+
+            actual = listAddRemoveString.ToString();
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Add_FourStrings_CheckCount()
+        {
+            //Arrange
+            CustomLists<string> listAddFour = new CustomLists<string>();
+            string expected = "One,Two,Three,Four";
+            string actual;
+
+            //Act
+            listAddFour.Add("One");
+            listAddFour.Add("Two");
+            listAddFour.Add("Three");
+            listAddFour.Add("Four");
+
+            actual = listAddFour.ToString();
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 
 }
