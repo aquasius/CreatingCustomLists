@@ -13,6 +13,26 @@ namespace CustomListCreation
         private int capacity;
         private int count;
 
+        
+        public T this[int i]
+        {
+            get
+            {
+                return items[i];
+            }
+            set
+            {
+                items[i] = value;
+            }
+        }
+        
+        public int Count
+        {
+            get
+            {
+                return count;
+            }
+        }
 
         //constructor
         public CustomLists()
@@ -31,9 +51,15 @@ namespace CustomListCreation
             {
                 capacity *= 2;
                 T[] temp = new T[capacity];
-                //move values to it
-                //destroy and recreate original 
-                //move values back to original
+                for(int i = 0; i < count; i++)
+                {
+                    temp[i] = items[i];
+                }
+                temp[count] = item;
+
+                items = temp;
+                
+             
             }
             else
             {
