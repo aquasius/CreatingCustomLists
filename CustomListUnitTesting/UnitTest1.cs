@@ -148,6 +148,7 @@ namespace CustomListUnitTesting
             listRemoveIndex2.Add(1);
             listRemoveIndex2.Add(2);
             listRemoveIndex2.Add(3);
+            listRemoveIndex2.Remove(3);
 
             actual = listRemoveIndex2.Count;
 
@@ -175,7 +176,7 @@ namespace CustomListUnitTesting
             listCheckIndex5.Add(8);
             listCheckIndex5.Add(9);
             listCheckIndex5.Add(10);
-            listCheckIndex5.Remove(6);
+            listCheckIndex5.Remove(1);
 
             actual = listCheckIndex5[5];
 
@@ -244,7 +245,7 @@ namespace CustomListUnitTesting
             bool actual;
 
             //Act
-            listRemoveFakeNumber.Remove(1);
+            listRemoveFakeNumber.Remove(true);
 
             actual = false;
 

@@ -9,7 +9,7 @@ namespace CustomListCreation
     public class CustomLists<T>
     {
         //member variables
-        private T[] items;
+        private T[] list;
         private int capacity;
         private int count;
 
@@ -18,11 +18,11 @@ namespace CustomListCreation
         {
             get
             {
-                return items[i];
+                return list[i];
             }
             set
             {
-                items[i] = value;
+                list[i] = value;
             }
         }
         
@@ -39,7 +39,7 @@ namespace CustomListCreation
         {
             capacity = 4;
             count = 0;
-            items = new T[capacity];
+            list = new T[capacity];
         }
 
 
@@ -53,21 +53,45 @@ namespace CustomListCreation
                 T[] temp = new T[capacity];
                 for(int i = 0; i < count; i++)
                 {
-                    temp[i] = items[i];
+                    temp[i] = list[i];
                 }
                 temp[count] = item;
 
-                items = temp;
+                list = temp;
                 
              
             }
             else
             {
-                items[count] = item;
+                list[count] = item;
             }
             count++;
         }
 
+        public bool Remove(T item)
+        {
+            T[] temp = new T[count -1];
+            bool indexFound = false;
+            for (int i = 0; i < count; i++)
+            {
+                if (list[i].Equals(item))
+                {
+                    indexFound = true;
+                }
 
+                if (!list[i].Equals(item))
+                {
+                    temp[i] = list[i];
+                   
+                }
+
+
+            }
+            list = temp;
+            count--;
+            return indexFound;
+
+
+        }
     }
 }
