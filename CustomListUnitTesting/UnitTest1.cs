@@ -157,34 +157,8 @@ namespace CustomListUnitTesting
 
         }
 
-        [TestMethod]
-        public void Add_TenNumbers_RemoveIndexFive_CheckIndexFive()
-        {
-            //Arrange
-            CustomLists<int> listCheckIndex5 = new CustomLists<int>();
-            int expected = 7;
-            int actual;
-
-            //Act
-            listCheckIndex5.Add(1);
-            listCheckIndex5.Add(2);
-            listCheckIndex5.Add(3);
-            listCheckIndex5.Add(4);
-            listCheckIndex5.Add(5);
-            listCheckIndex5.Add(6);
-            listCheckIndex5.Add(7);
-            listCheckIndex5.Add(8);
-            listCheckIndex5.Add(9);
-            listCheckIndex5.Add(10);
-            listCheckIndex5.Remove(1);
-
-            actual = listCheckIndex5[5];
-
-            //Assert
-            Assert.AreEqual(expected, actual);
-
-        }
-
+       
+       
         [TestMethod]
         public void Add_SevenNumbers_RemoveTwoNumbers_CheckCount()
         {

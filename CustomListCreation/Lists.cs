@@ -70,8 +70,9 @@ namespace CustomListCreation
 
         public bool Remove(T item)
         {
-            T[] temp = new T[count -1];
+            T[] temp = new T[capacity];
             bool indexFound = false;
+            int j = 0;
             for (int i = 0; i < count; i++)
             {
                 if (list[i].Equals(item))
@@ -81,8 +82,8 @@ namespace CustomListCreation
 
                 if (!list[i].Equals(item))
                 {
-                    temp[i] = list[i];
-                   
+                    temp[j] = list[i];
+                    j++;
                 }
 
 
