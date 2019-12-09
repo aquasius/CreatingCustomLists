@@ -3,19 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections;
 
 namespace CustomListCreation
 {
-    public class CustomLists<T> 
+    public class CustomLists<T> : IEnumerable
     {
         //member variables
         private T[] list;
         private int capacity;
         private int count;
 
-       
+        public IEnumerator GetEnumerator()
+        {
+            for (int i = 0; i < count; i++)
+            {
+                yield return list[i];
+            }
+        }
 
-       
+
 
         public T this[int i]
         {
@@ -124,11 +131,44 @@ namespace CustomListCreation
 
         }
 
+        public static CustomLists<T> operator -(CustomLists<T> listOne, CustomLists<T> listTwo)
+        {
+            CustomLists<T> arrayHolder = new CustomLists<T>();
+            bool copy = false;
+
+            for (int i = 0; i < listTwo.count; i++)
+            {
+                for (int j = 0; j < listOne.count; j++)
+                {
+                    if (listTwo[i].Equals(listOne[j]) && !copy)
+                    {
+                        copy = true;
+                    }
+                    else
+                    {
+                        arrayHolder.Add(listOne[j]);
+                    }
+                }
+            }
+            return arrayHolder;
+        }
+
+        public static void Zip(CustomLists<T> list)
+        {
+           
+        }
 
 
 
-    }        
+
+
+    }
+}
+
+
+
+    
         
 
     
-}
+

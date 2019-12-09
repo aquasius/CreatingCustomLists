@@ -370,7 +370,8 @@ namespace CustomListUnitTesting
             //Arrange
             CustomLists<string> listLettersOne = new CustomLists<string>();
             CustomLists<string> listLettersTwo = new CustomLists<string>();
-            string expected = "bils";
+            CustomLists<string> actualLetters;
+            string expected = "s";
             string actual;
 
             //Act
@@ -380,13 +381,59 @@ namespace CustomListUnitTesting
             listLettersOne.Add("l");
             listLettersOne.Add("s");
             listLettersTwo.Add("l");
-            actual = listLettersOne.ToString() - listLettersTwo.ToString();
+            actualLetters = listLettersOne - listLettersTwo;
+            actual = actualLetters[3];
+
             //Assert
-            Assert.AreEqual(expected[3], actual[3]);
+            Assert.AreEqual(expected, actual);
         }
 
+        [TestMethod]
+        public void Zipping_TwoSets_OfNumbers()
+        {
+            //Arrange
+            CustomLists<int> listZipNumber1 = new CustomLists<int>();
+            CustomLists<int> listZipNumber2 = new CustomLists<int>();
+            int expected = 456789;
+            int actual;
+            //Act
+            listZipNumber1.Add(4);
+            listZipNumber1.Add(6);
+            listZipNumber1.Add(8);
+            listZipNumber2.Add(5);
+            listZipNumber2.Add(7);
+            listZipNumber2.Add(9);
 
-    }
+            actual = listZipNumber1.Zip(listZipNumber2);
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+        
+        [TestMethod]
+        public void Zipping_Two_Strings()
+        {
+            //Arrange
+            CustomLists<string> listStringZip1 = new CustomLists<string>();
+            CustomLists<string> listStringZip2 = new CustomLists<string>();
+            string expected = "buffalo";
+            string actual;
+
+
+            //Act
+            listStringZip1.Add("b");
+            listStringZip1.Add("f");
+            listStringZip1.Add("a");
+            listStringZip1.Add("o");
+            listStringZip2.Add("u");
+            listStringZip2.Add("f");
+            listStringZip2.Add("l");
+
+            actual = listStringZip1.ToString() + listStringZip2.ToString();
+            listStringZip1.Zip(listStringZip2);
+            //Assert
+            Assert.AreEqual(expected, actual);
+
+        }
 
 
 
