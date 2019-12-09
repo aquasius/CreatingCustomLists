@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace CustomListCreation
 {
-    public class CustomLists<T> 
+    public class CustomLists<T> : IEnumerator
     {
         //member variables
         private T[] list;
         private int capacity;
         private int count;
 
-       
-       
+
+
         public T this[int i]
         {
             get
@@ -26,7 +26,7 @@ namespace CustomListCreation
                 list[i] = value;
             }
         }
-        
+
         public int Count
         {
             get
@@ -47,20 +47,20 @@ namespace CustomListCreation
         //member methods
         public void Add(T item)
         {
-            
-            if(count == capacity)
+
+            if (count == capacity)
             {
                 capacity *= 2;
                 T[] temp = new T[capacity];
-                for(int i = 0; i < count; i++)
+                for (int i = 0; i < count; i++)
                 {
                     temp[i] = list[i];
                 }
                 temp[count] = item;
 
                 list = temp;
-                
-             
+
+
             }
             else
             {
@@ -94,28 +94,40 @@ namespace CustomListCreation
             return indexFound;
         }
 
-        
-       public override string ToString()
-       {
-          string stringToReturn = "";
-          for (int i = 0; i < count; i++)
-          {
+
+        public override string ToString()
+        {
+            string stringToReturn = "";
+            for (int i = 0; i < count; i++)
+            {
                 Convert.ToString(list[i]);
                 stringToReturn += list[i];
-          }
+            }
             return stringToReturn;
-       }
-          
-           
-        
+        }
+
+        public static CustomLists<T> operator +(CustomLists<T> listOne, CustomLists<T> listTwo)
+        {
+            CustomLists<T> arrayHolder = new CustomLists<T>();
+
+            for (int i = 0; i < listOne.count; i++)
+            {
+                arrayHolder.Add(listOne[i]);
+            }
+            for (int i = 0; i < listOne.count; i++)
+            {
+                arrayHolder.Add(listTwo[i]);
+            }
+            return arrayHolder;
 
 
-    }
+
+        }
 
 
-        
 
-            
+
+    }        
         
 
     

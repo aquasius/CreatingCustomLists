@@ -308,8 +308,8 @@ namespace CustomListUnitTesting
     {
         //Arrange
         CustomLists<int> expected = new CustomLists<int>() { 5, 6, 7, 8, 9, 10 };
-        CustomLists<int> listNumbers1 = new CustomLists<int>() { 8, 9, 10 };
-        CustomLists<int> listNumbers2 = new CustomLists<int>() { 5, 6, 7 };
+        CustomLists<int> listNumbers1 = new CustomLists<int>() { 5, 6, 7 };
+        CustomLists<int> listNumbers2 = new CustomLists<int>() { 8, 9, 10 };
         CustomLists<int> actual = new CustomLists<int>();
         //Act
         actual = listNumbers1 + listNumbers2;
