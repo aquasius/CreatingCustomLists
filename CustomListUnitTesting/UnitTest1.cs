@@ -25,7 +25,7 @@ namespace CustomListUnitTesting
 
 
         }
-    
+
         [TestMethod]
         public void Add_FiveNumbers_ToResizeCapacity()
         {
@@ -157,8 +157,8 @@ namespace CustomListUnitTesting
 
         }
 
-       
-       
+
+
         [TestMethod]
         public void Add_SevenNumbers_RemoveTwoNumbers_CheckCount()
         {
@@ -301,39 +301,53 @@ namespace CustomListUnitTesting
             //Assert
             Assert.AreEqual(expected, actual);
         }
+
+
+        [TestMethod]
+        public void Overload_PlusOperator_WithNumbers()
+        {
+            //Arrange
+            CustomLists<int> listNumbers1 = new CustomLists<int>();
+            CustomLists<int> listNumbers2 = new CustomLists<int>();
+            string expected = "5678910";
+            CustomLists<int> actual;
+            //Act
+            listNumbers1.Add(5);
+            listNumbers1.Add(6);
+            listNumbers1.Add(7);
+            listNumbers2.Add(8);
+            listNumbers2.Add(9);
+            listNumbers2.Add(10);
+
+
+            actual = listNumbers1 + listNumbers2;
+            //Assert
+            Assert.AreEqual(expected, actual.ToString());
+        }
+        [TestMethod]
+        public void Overload_PlusOperator_WithLetters()
+        {
+            //Arrange
+
+            CustomLists<string> listLetters1 = new CustomLists<string>();
+            CustomLists<string> listLetters2 = new CustomLists<string>();
+            string expected = "bucks";
+            string actual;
+            //Act
+            listLetters1.Add("b");
+            listLetters1.Add("u");
+            listLetters1.Add("c");
+            listLetters2.Add("k");
+            listLetters2.Add("s");
+            actual = listLetters1.ToString() + listLetters2.ToString();
+            //Assert
+            Assert.AreEqual(expected[4], actual[4]);
+        }
+
+
+
+
     }
-
-    [TestMethod]
-    public void Overload_PlusOperator_WithNumbers()
-    {
-        //Arrange
-        CustomLists<int> expected = new CustomLists<int>() { 5, 6, 7, 8, 9, 10 };
-        CustomLists<int> listNumbers1 = new CustomLists<int>() { 5, 6, 7 };
-        CustomLists<int> listNumbers2 = new CustomLists<int>() { 8, 9, 10 };
-        CustomLists<int> actual = new CustomLists<int>();
-        //Act
-        actual = listNumbers1 + listNumbers2;
-        //Assert
-        Assert.AreEqual(expected[3], actual[3]); 
-    }
-    [TestMethod]
-    public void Overload_PlusOperator_WithLetters()
-    {
-        //Arrange
-        CustomLists<string> expected = new CustomLists<string>() { "b", "u", "c", "k", "s" };
-        CustomLists<string> listLetters1 = new CustomLists<string>() { "b", "u", "c" };
-        CustomLists<string> listLetters2 = new CustomLists<string>() { "k", "s" };
-        CustomLists<string> actual = new CustomLists<string>();
-        //Act
-        actual = listLetters1 + listLetters2;
-        //Assert
-        Assert.AreEqual(expected[4], actual[4]); 
-    }
-
-
-
-
-    
 
 
 
