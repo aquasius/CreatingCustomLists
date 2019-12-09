@@ -344,7 +344,46 @@ namespace CustomListUnitTesting
             Assert.AreEqual(expected[4], actual[4]);
         }
 
+        [TestMethod]
+        public void Overload_MinusOperator_Numbers()
+        {
+            //Arrange
+            CustomLists<int> listOfNumbers1 = new CustomLists<int>();
+            CustomLists<int> listOfNumbers2 = new CustomLists<int>();
+            string expected = "56";
+            CustomLists<int> actual;
 
+
+            //Act
+            listOfNumbers1.Add(4);
+            listOfNumbers1.Add(5);
+            listOfNumbers1.Add(6);
+            listOfNumbers2.Add(4);
+            actual = listOfNumbers1 - listOfNumbers2;
+            //Assert
+            Assert.AreEqual(expected, actual.ToString());
+        }
+        
+        [TestMethod]
+        public void MinusOperator_Letters()//subtracts the contents of both lists
+        {
+            //Arrange
+            CustomLists<string> listLettersOne = new CustomLists<string>();
+            CustomLists<string> listLettersTwo = new CustomLists<string>();
+            string expected = "bils";
+            string actual;
+
+            //Act
+            listLettersOne.Add("b");
+            listLettersOne.Add("i");
+            listLettersOne.Add("l");
+            listLettersOne.Add("l");
+            listLettersOne.Add("s");
+            listLettersTwo.Add("l");
+            actual = listLettersOne.ToString() - listLettersTwo.ToString();
+            //Assert
+            Assert.AreEqual(expected[3], actual[3]);
+        }
 
 
     }
