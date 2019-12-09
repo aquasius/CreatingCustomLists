@@ -251,7 +251,7 @@ namespace CustomListUnitTesting
         {
             //Arrange
             CustomLists<string> listAddTwoStrings = new CustomLists<string>();
-            string expected = "Milwaukee,Bucks";
+            string expected = "MilwaukeeBucks";
             string actual;
 
             //Act
@@ -287,7 +287,7 @@ namespace CustomListUnitTesting
         {
             //Arrange
             CustomLists<string> listAddFour = new CustomLists<string>();
-            string expected = "One,Two,Three,Four";
+            string expected = "OneTwoThreeFour";
             string actual;
 
             //Act

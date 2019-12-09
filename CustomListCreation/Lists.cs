@@ -13,7 +13,7 @@ namespace CustomListCreation
         private int capacity;
         private int count;
 
-        
+
         public T this[int i]
         {
             get
@@ -91,8 +91,31 @@ namespace CustomListCreation
             list = temp;
             count--;
             return indexFound;
-
-
         }
+
+        
+       public override string ToString()
+       {
+          string stringToReturn = "";
+          for (int i = 0; i < count; i++)
+          {
+                Convert.ToString(list[i]);
+                stringToReturn += list[i];
+          }
+            return stringToReturn;
+       }
+          
+           
+        
+
+
     }
+
+
+        
+
+            
+        
+
+    
 }
