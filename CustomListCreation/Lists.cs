@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 namespace CustomListCreation
 {
-    public class CustomLists<T>
+    public class CustomLists<T> 
     {
         //member variables
         private T[] list;
         private int capacity;
         private int count;
 
-
+       
+       
         public T this[int i]
         {
             get
