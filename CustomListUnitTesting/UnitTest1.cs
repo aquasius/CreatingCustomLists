@@ -363,7 +363,7 @@ namespace CustomListUnitTesting
             //Assert
             Assert.AreEqual(expected, actual.ToString());
         }
-        
+
         [TestMethod]
         public void MinusOperator_Letters()//subtracts the contents of both lists
         {
@@ -408,7 +408,7 @@ namespace CustomListUnitTesting
             //Assert
             Assert.AreEqual(expected, actual);
         }
-        
+
         [TestMethod]
         public void Zipping_Two_Strings()
         {
@@ -435,7 +435,7 @@ namespace CustomListUnitTesting
 
         }
 
-
+    }
 
 
 }
